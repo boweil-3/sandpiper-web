@@ -1,0 +1,292 @@
+/* ── Science page — supplements style.css ───────────────────────────────── */
+
+/* ── Page hero ──────────────────────────────────────────────────────────── */
+.sci-hero {
+  padding: 140px 0 72px;
+  position: relative;
+}
+.sci-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse at 50% 10%, rgba(240,165,0,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+.sci-hero-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.sci-hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.sci-hero-sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--text-sub);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 44px;
+}
+
+/* ── Category quick-nav ─────────────────────────────────────────────────── */
+.cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cat-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--c, var(--text-sub));
+  background: color-mix(in srgb, var(--c, var(--text-sub)) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c, var(--text-sub)) 30%, transparent);
+  padding: 6px 14px 6px 10px;
+  border-radius: 20px;
+  transition: background 0.2s, transform 0.15s;
+}
+.cat-nav-pill:hover {
+  background: color-mix(in srgb, var(--c, var(--text-sub)) 18%, transparent);
+  transform: scale(0.97);
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (color: color-mix(in srgb, red 10%, blue)) {
+  .cat-nav-pill { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+}
+
+/* ── Primer section ─────────────────────────────────────────────────────── */
+.primer-section {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, #090C20 100%);
+}
+.primer-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Clock dial (CSS-only circadian diagram) ────────────────────────────── */
+.primer-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.clock-dial {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+.clock-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-str);
+  background: var(--card);
+}
+.clock-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+.clock-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-sub);
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+.clock-segment {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 50%; height: 2px;
+  transform-origin: 0 50%;
+  transform: rotate(var(--angle));
+  background: transparent;
+}
+.clock-segment::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: -5px;
+  width: 32px; height: 12px;
+  border-radius: 6px;
+  background: var(--seg-color);
+  opacity: 0.75;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--seg-color) 50%, transparent);
+}
+.clock-tick {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 50%; height: 1px;
+  transform-origin: 0 50%;
+  transform: rotate(var(--angle));
+}
+.clock-tick::after {
+  content: var(--tick-label);
+  position: absolute;
+  right: -8px;
+  top: -9px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  white-space: nowrap;
+  transform: rotate(calc(-1 * var(--angle)));
+}
+.clock-caption {
+  font-size: 12px;
+  color: var(--text-sub);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* ── Category blocks ────────────────────────────────────────────────────── */
+.cats-section {
+  padding-top: 80px;
+}
+.cat-block {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition: border-color 0.25s;
+}
+.cat-block:hover { border-color: var(--border-str); }
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--cbg, rgba(255,255,255,0.03));
+  border-bottom: 1px solid var(--border);
+}
+.cat-icon-wrap {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 28%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c);
+}
+.cat-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.cat-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.cat-body {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  background: var(--card);
+}
+
+.cat-section h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+}
+.cat-section p {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.cat-section p:last-child { margin-bottom: 0; }
+.cat-section em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.cat-tips {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+.tip-dot {
+  flex-shrink: 0;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 6px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .primer-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .primer-clock { order: -1; }
+  .clock-dial { width: 240px; height: 240px; }
+
+  .cat-header { padding: 22px 20px; }
+  .cat-body {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 24px;
+  }
+  .cat-tips { grid-column: 1; }
+}
+
+@media (max-width: 600px) {
+  .sci-hero { padding: 110px 0 48px; }
+  .cat-header { gap: 14px; }
+  .cat-icon-wrap { width: 44px; height: 44px; border-radius: 12px; }
+  .cat-icon-wrap svg { width: 22px; height: 22px; }
+  .cat-title { font-size: 18px; }
+}

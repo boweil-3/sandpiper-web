@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Science — Sandpiper</title>
+  <meta name="description" content="Learn the circadian science behind every Sandpiper action card — light, sleep, caffeine, melatonin, and more.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Science — Sandpiper">
+  <meta property="og:description" content="Learn the circadian science behind every Sandpiper action card.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sandpiper-app.com/science.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="science.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────────────────── -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="wordmark">🪶 Sandpiper</a>
+      <div class="nav-links">
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="science.html" style="color: var(--text);">The science</a>
+        <a href="index.html#download" class="btn-nav">Download</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="science.html">The science</a>
+      <a href="index.html#download">Download</a>
+    </div>
+  </nav>
+
+  <!-- ── Page hero ──────────────────────────────────────────────────────── -->
+  <section class="sci-hero">
+    <div class="container">
+      <p class="eyebrow">Circadian science</p>
+      <h1 class="sci-hero-title">What every card<br><em>actually does.</em></h1>
+      <p class="sci-hero-sub">
+        Sandpiper's schedule is built on decades of circadian biology research.
+        Each action card targets a specific lever in your body clock — here's the science
+        behind all nine.
+      </p>
+
+      <!-- Category quick-nav -->
+      <div class="cat-nav" id="catNav">
+        <a href="#seek-light"  class="cat-nav-pill" style="--c:#F0A500;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          Seek Light
+        </a>
+        <a href="#avoid-light" class="cat-nav-pill" style="--c:#7C6AEB;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          Avoid Light
+        </a>
+        <a href="#wake"        class="cat-nav-pill" style="--c:#E8C84A;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Wake
+        </a>
+        <a href="#stay-awake"  class="cat-nav-pill" style="--c:#50C8A0;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          Stay Awake
+        </a>
+        <a href="#caffeine"    class="cat-nav-pill" style="--c:#C87941;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/></svg>
+          Caffeine
+        </a>
+        <a href="#no-caffeine" class="cat-nav-pill" style="--c:#E87050;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          No Caffeine
+        </a>
+        <a href="#melatonin"   class="cat-nav-pill" style="--c:#6AB0D4;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          Melatonin
+        </a>
+        <a href="#sleep"       class="cat-nav-pill" style="--c:#6080C0;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18l-4 4 4 4H2"/></svg>
+          Sleep
+        </a>
+        <a href="#flight"      class="cat-nav-pill" style="--c:#50B8E8;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2c-.5.1-.9.5-1 1-.1.6.2 1.2.7 1.5L6.6 11l-1.4 4.2c-.2.5 0 1.1.5 1.4.4.2.9.2 1.3 0L10 15l4 4c.4.3.9.4 1.3.2.5-.2.8-.8.5-1z"/></svg>
+          Flight
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Circadian primer ────────────────────────────────────────────────── -->
+  <section class="section primer-section">
+    <div class="container">
+      <div class="primer-grid">
+        <div class="primer-text reveal">
+          <p class="section-label">The basics</p>
+          <h2 class="section-title">Your body runs on a 24-hour clock.</h2>
+          <p class="section-body" style="margin-bottom:16px;">
+            Your circadian rhythm is a biological timer embedded in nearly every cell of your body.
+            It regulates sleep, wakefulness, hormone release, digestion, and dozens of other
+            functions on a roughly 24-hour cycle.
+          </p>
+          <p class="section-body" style="margin-bottom:16px;">
+            When you fly across time zones, the external clock (daylight and social cues) shifts
+            immediately, but your internal clock takes days to follow. That gap is jet lag.
+          </p>
+          <p class="section-body">
+            The good news: your circadian clock is <em style="color:var(--text);font-style:normal;font-weight:600;">trainable</em>.
+            Specific inputs — light, darkness, caffeine, melatonin, sleep timing — can shift it
+            faster than just waiting. Sandpiper calculates exactly which input to apply and when.
+          </p>
+        </div>
+        <div class="primer-clock reveal">
+          <div class="clock-dial" aria-label="Circadian rhythm diagram">
+            <div class="clock-ring"></div>
+            <div class="clock-center">
+              <span class="clock-label">Circadian<br>rhythm</span>
+            </div>
+            <div class="clock-segment" style="--angle:0deg;   --seg-color:#F0A500;" data-tip="Morning light window"></div>
+            <div class="clock-segment" style="--angle:60deg;  --seg-color:#E8C84A;" data-tip="Wake anchor"></div>
+            <div class="clock-segment" style="--angle:120deg; --seg-color:#C87941;" data-tip="Caffeine window"></div>
+            <div class="clock-segment" style="--angle:180deg; --seg-color:#E87050;" data-tip="Caffeine cutoff"></div>
+            <div class="clock-segment" style="--angle:240deg; --seg-color:#7C6AEB;" data-tip="Avoid light"></div>
+            <div class="clock-segment" style="--angle:300deg; --seg-color:#3D5A99;" data-tip="Sleep window"></div>
+            <div class="clock-tick" style="--angle:0deg;   --tick-label:'6am'"></div>
+            <div class="clock-tick" style="--angle:90deg;  --tick-label:'Noon'"></div>
+            <div class="clock-tick" style="--angle:180deg; --tick-label:'6pm'"></div>
+            <div class="clock-tick" style="--angle:270deg; --tick-label:'Mid'"></div>
+          </div>
+          <p class="clock-caption">Each arc represents a circadian intervention window. Sandpiper calculates these for your specific flight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Category cards ─────────────────────────────────────────────────── -->
+  <section class="section cats-section">
+    <div class="container">
+      <p class="section-label">All nine categories</p>
+      <h2 class="section-title" style="margin-bottom:56px;">The science behind every card.</h2>
+
+      <!-- SEEK LIGHT -->
+      <div class="cat-block reveal" id="seek-light">
+        <div class="cat-header" style="--c:#F0A500; --cbg:#F0A50015;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Seek Light</span>
+            <h3 class="cat-title">Your most powerful circadian signal.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Light is the primary <em>zeitgeber</em> (German for "time-giver") for the human circadian clock. Specialised photoreceptive cells in your retina — intrinsically photosensitive retinal ganglion cells (ipRGCs) — detect light independently of vision and relay the signal directly to the suprachiasmatic nucleus (SCN) in the hypothalamus, your master clock.</p>
+            <p>Morning light suppresses melatonin and advances your clock (makes it run earlier). The effect is strongest in the first few hours after your body's internal dawn, and it's dose-dependent — outdoor light on a cloudy day (10,000–25,000 lux) is still 100× brighter than most indoor lighting.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>When you're flying east and need to advance your clock, Sandpiper schedules seek-light events in your destination's morning window. When flying west, it may shift light exposure to later in the day to delay the clock instead. The timing is calculated from your specific departure and arrival times.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Go outside — even overcast skies provide far more lux than indoor lighting.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Aim for 20–30 minutes of exposure. Face toward the sky, not directly at the sun.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              A 10,000-lux light therapy lamp works as a substitute on the plane or in a windowless hotel room.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVOID LIGHT -->
+      <div class="cat-block reveal" id="avoid-light">
+        <div class="cat-header" style="--c:#7C6AEB; --cbg:#7C6AEB15;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Avoid Light</span>
+            <h3 class="cat-title">Light at the wrong time sets you back.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Light exposure has opposite effects depending on when it hits your circadian phase. Light in the evening (relative to your body clock) <em>delays</em> the clock — pushing your sleep later. If you're trying to advance your clock to an eastern destination, evening light is actively counterproductive.</p>
+            <p>Blue-wavelength light (peaking around 480 nm) is the most potent circadian signal. Screens, LED overhead lights, and fluorescent office lighting are heavy in blue wavelengths. Even moderate exposure (50–200 lux) in the biological evening suppresses melatonin for hours.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Avoid-light cards protect your clock during the hours when light would push it in the wrong direction. This is especially important in the evening before your destination's local bedtime, and immediately after an eastbound flight when your body still thinks it's daytime back home.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Enable night mode / warm-color shift on all screens at least 2 hours before destination bedtime.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Use dim, amber-toned lamps instead of overhead lights.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              On the plane during a sleep window, close the window shade and wear an eye mask.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAKE -->
+      <div class="cat-block reveal" id="wake">
+        <div class="cat-header" style="--c:#E8C84A; --cbg:#E8C84A15;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Wake</span>
+            <h3 class="cat-title">A fixed wake time anchors everything else.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Wake time is one of the most reliable anchors for the circadian rhythm. Waking at a consistent local time reinforces the adenosine build-up/clearance cycle (sleep pressure) and aligns the morning cortisol surge — the "cortisol awakening response" — to the correct local dawn.</p>
+            <p>Research on shift workers and transcontinental travelers consistently shows that irregular wake times prolong circadian misalignment, while a strict wake anchor accelerates re-entrainment even when sleep feels poor.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Wake events mark the target wake time in destination local time. Even if you slept poorly, waking at this time is critical — it sets the starting point for the light exposure, caffeine window, and melatonin timing that follow throughout the day.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Set a hard alarm. Do not snooze — each snooze cycle adds adenosine confusion.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Get up and move immediately. Lying in bed delays the cortisol surge that helps you feel alert.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Pair wake time with immediate light exposure for maximum effect.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAY AWAKE -->
+      <div class="cat-block reveal" id="stay-awake">
+        <div class="cat-header" style="--c:#50C8A0; --cbg:#50C8A015;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Stay Awake</span>
+            <h3 class="cat-title">Resist the urge to sleep at the wrong time.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Sleep is regulated by two processes: circadian rhythm (Process C) and homeostatic sleep pressure (Process S, driven by adenosine accumulation). Sleeping during destination daytime satisfies Process S but reinforces your old Process C — meaning you'll feel better short-term but prolong jet lag for days.</p>
+            <p>Staying awake through fatigue, even when it's uncomfortable, forces adenosine to keep building until it aligns with destination nighttime. This is often the hardest part of the schedule, but also one of the highest-leverage interventions.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Stay-awake cards appear during destination daytime hours when your body clock still expects sleep. They're paired with caffeine and light events to make the effort manageable. The goal is to keep you functional until a destination-aligned bedtime.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Move — a 10-minute walk does more for alertness than any amount of sitting.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              A nap of 10–20 minutes is acceptable during stay-awake periods if necessary. Longer naps restart a full sleep cycle and make it harder to sleep at night.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Social interaction is a powerful alertness driver — meet people, make calls, avoid isolation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAFFEINE -->
+      <div class="cat-block reveal" id="caffeine">
+        <div class="cat-header" style="--c:#C87941; --cbg:#C8794115;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Caffeine</span>
+            <h3 class="cat-title">A strategic alertness tool, not just a habit.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Caffeine works by binding adenosine receptors in the brain without activating them, effectively blocking the sleep-pressure signal for 4–6 hours. It doesn't eliminate sleep need — it delays it. When caffeine clears, adenosine floods back in rapidly, which is why mistimed caffeine leads to a hard crash.</p>
+            <p>Caffeine also has a half-life of approximately 5–7 hours in most adults (longer in some). A 200mg dose (two espressos) consumed at 2pm still has 100mg active at 9pm — enough to measurably delay sleep onset and reduce slow-wave sleep quality, even if you feel like you can fall asleep.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Caffeine events are placed during destination daytime hours to support wakefulness when your body clock is pushing for sleep. Sandpiper calculates both the open window (when caffeine helps) and the cutoff (before which all caffeine should be finished).</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              100–200mg per dose (1–2 cups of coffee). More is not more effective and increases anxiety.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Don't drink caffeine on an empty stomach — it amplifies the jitteriness and accelerates metabolism, shortening the alertness window.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Always respect Sandpiper's caffeine cutoff, even if you feel fine.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NO CAFFEINE -->
+      <div class="cat-block reveal" id="no-caffeine">
+        <div class="cat-header" style="--c:#E87050; --cbg:#E8705015;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">No Caffeine</span>
+            <h3 class="cat-title">The cutoff matters more than the coffee.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Because caffeine blocks adenosine receptors, caffeine taken too late prevents the natural rise of sleep pressure needed to fall asleep at the destination-aligned bedtime. It also suppresses the secretion of melatonin — the darkness hormone — by blocking adenosine pathways that normally trigger the pineal gland to release it.</p>
+            <p>Critically, caffeine's effects on sleep architecture continue well after subjective alertness fades. Even if you feel tired and can fall asleep, residual caffeine reduces slow-wave (deep) sleep — the most restorative phase — by up to 20%, leaving you less recovered despite the same number of hours in bed.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>No-caffeine cards mark the point at which further caffeine would compromise destination-aligned sleep. Sandpiper calculates the cutoff by working backward from your target bedtime, accounting for caffeine half-life. For most people this is 6–8 hours before bedtime.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Switch to herbal tea, water, or decaffeinated drinks after the cutoff. Decaf still contains 5–30mg of caffeine — check labels on long haul flights.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Be aware that dark chocolate and some medications (certain pain relievers) contain caffeine.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              If you feel a crash shortly after stopping caffeine, a short walk and cold water are more effective than another cup.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MELATONIN -->
+      <div class="cat-block reveal" id="melatonin">
+        <div class="cat-header" style="--c:#6AB0D4; --cbg:#6AB0D415;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><path d="M12 7a5 5 0 0 0 0 10 7 7 0 0 1 0-10z" fill="currentColor" stroke="none" opacity="0.3"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Melatonin</span>
+            <h3 class="cat-title">Darkness in a pill — timed precisely.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Melatonin is produced by the pineal gland in response to darkness and acts as a circadian signal — telling the brain that night has begun. Unlike a sleeping pill, melatonin doesn't sedate you directly; it shifts your body clock. Its effectiveness is almost entirely determined by <em>when</em> you take it, not how much.</p>
+            <p>Taking melatonin in the early evening (relative to the destination clock) advances the circadian phase — shifting the clock earlier, ideal after eastbound flights. Taking it in the early morning (at home time) has less value and can cause grogginess. Research shows doses as low as 0.5mg can be as effective as 5mg for circadian shifting, while larger doses primarily extend duration of drowsiness.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Melatonin events are placed at the destination's early evening to help advance the clock on eastbound routes. Sandpiper calculates the optimal window based on the phase response curve (PRC) — the relationship between melatonin timing and clock shift magnitude.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Use 0.5mg–1mg for circadian shifting. Reserve higher doses (3–5mg) only when you need the sedating effect to fall asleep in an unfamiliar environment.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Take it 30–60 minutes before the target time shown in the app.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Pair with avoid-light behavior after taking melatonin — light exposure immediately counteracts its effect.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Consult a healthcare provider if you take medications — melatonin interacts with anticoagulants, immunosuppressants, and some diabetes drugs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLEEP -->
+      <div class="cat-block reveal" id="sleep">
+        <div class="cat-header" style="--c:#6080C0; --cbg:#3D5A9915;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18l-4 4 4 4H2"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Sleep</span>
+            <h3 class="cat-title">Sleep at the right local time, not just when you're tired.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>Sleep is the primary restorative phase for the circadian system. During sleep — particularly slow-wave (deep) sleep — the brain clears metabolic waste, consolidates memory, and performs cellular repair. For jet lag recovery, the timing of sleep matters as much as its duration.</p>
+            <p>Sleeping during destination nighttime reinforces the new circadian phase. Each destination-aligned sleep episode shifts Process C a little further toward the local time. Conversely, sleeping during destination daytime keeps the old phase alive and extends jet lag duration significantly.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Sleep events mark planned windows that align with destination nighttime — both on the plane and in your hotel. On long-haul flights, Sandpiper identifies which portion of the flight overlaps with destination night and marks that as the sleep window, even if it's midday back home.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Make the environment as sleep-conducive as possible: eye mask, earplugs or white noise, cool temperature (16–19°C / 61–66°F is optimal).
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Don't watch the clock — checking the time activates the arousal system and makes sleep onset take longer.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              If you can't sleep, lie still with eyes closed. Even quiet wakefulness in the dark is more restorative for circadian alignment than getting up and turning on lights.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLIGHT -->
+      <div class="cat-block reveal" id="flight">
+        <div class="cat-header" style="--c:#50B8E8; --cbg:#50B8E815;">
+          <div class="cat-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5L10 5 1.8 6.2c-.5.1-.9.5-1 1-.1.6.2 1.2.7 1.5L6.6 11l-1.4 4.2c-.2.5 0 1.1.5 1.4.4.2.9.2 1.3 0L10 15l4 4c.4.3.9.4 1.3.2.5-.2.8-.8.5-1z"/></svg>
+          </div>
+          <div class="cat-header-text">
+            <span class="cat-badge">Flight</span>
+            <h3 class="cat-title">The transition point that restructures your schedule.</h3>
+          </div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-section">
+            <h4>The science</h4>
+            <p>The flight itself isn't just travel — it's a circadian-disruption event. Cabin pressure is maintained at the equivalent of 6,000–8,000 feet altitude, reducing blood oxygen saturation by 4–6% compared to sea level. Combined with low humidity (~10–20%), reduced physical activity, and irregular meal timing, the flight environment actively worsens circadian disruption independently of the time zone change.</p>
+            <p>The direction of travel matters significantly. Eastbound flights require the clock to advance (get earlier), which is harder for the circadian system than delaying (westbound). Most people's free-running circadian period is slightly longer than 24 hours, making delay easier than advance.</p>
+          </div>
+          <div class="cat-section">
+            <h4>What Sandpiper uses it for</h4>
+            <p>Flight events (FLIGHT_DEPART and FLIGHT_ARRIVE) are reference points that divide your schedule into three phases — pre-flight, in-flight, and post-arrival. They also carry route information: IATA codes, departure times, and local time zone offsets that drive all the downstream calculations.</p>
+          </div>
+          <div class="cat-tips">
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Set your watch to destination time at boarding. This mental switch primes you to interpret Sandpiper's schedule in local time.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Hydrate aggressively — dehydration at altitude impairs cognitive function and worsens fatigue.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Avoid alcohol in-flight. It disrupts sleep architecture (suppresses REM) even in small amounts and amplifies dehydration.
+            </div>
+            <div class="tip">
+              <span class="tip-dot"></span>
+              Move every hour — standing and walking counters blood pooling, reduces fatigue, and lowers deep-vein thrombosis risk.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Download CTA ───────────────────────────────────────────────────── -->
+  <section class="section download-section">
+    <div class="container">
+      <div class="download-inner reveal">
+        <span class="download-feather" aria-hidden="true">🪶</span>
+        <h2 class="download-title">Ready to put the science to work?</h2>
+        <p class="download-sub">Enter your flight. Get your personalized schedule in seconds.</p>
+        <div class="download-btns">
+          <a href="#" class="store-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="store-btn-text">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="#" class="store-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.18 23.76c.26.14.57.18.91.1l12.44-7.19-2.78-2.78L3.18 23.76zm-1.04-1.7V1.94c0-.45.12-.82.35-1.05L13.91 12 2.49 23.11c-.23-.23-.35-.6-.35-1.05zm18.25-9.13-2.88-1.66-3.08 3.08 3.08 3.08 2.9-1.67c.83-.48.83-1.35-.02-1.83zM3.18.24C2.45-.17 1.79-.06 1.44.3l11.27 11.27L15.49 8.8 3.18.24z"/>
+            </svg>
+            <div class="store-btn-text">
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-wordmark">🪶 Sandpiper</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="science.html">The Science</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="mailto:hello@sandpiper-app.com">Contact</a>
+      </nav>
+      <span class="footer-copy">© 2025 Sandpiper. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
