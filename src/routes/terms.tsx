@@ -1,0 +1,453 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
+
+export const Route = createFileRoute("/terms")({
+  component: Terms,
+  head: () => ({
+    meta: [
+      { title: "Terms of Use — Sandpiper" },
+      { name: "description", content: "Terms of Use for the Sandpiper app and website." },
+      { property: "og:title", content: "Terms of Use — Sandpiper" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+      },
+    ],
+  }),
+});
+
+function Terms() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Nav />
+
+      <main className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
+        {/* Header */}
+        <div className="mb-12">
+          <p className="label-caps text-muted-foreground mb-3">Legal</p>
+          <h1 className="font-serif text-4xl sm:text-5xl text-foreground mb-4">
+            Terms of Use
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Effective date: May 30, 2026 &nbsp;·&nbsp; Bayhart Ventures LLC
+          </p>
+          <div className="hairline mt-8" />
+        </div>
+
+        {/* Body */}
+        <div className="prose-legal">
+          <Section id="acceptance" title="1. Acceptance of Terms">
+            <p>
+              By downloading, installing, or using the Sandpiper mobile application, or by
+              accessing the Sandpiper website at sandpiper-app.com (collectively, the
+              "Service"), you agree to be bound by these Terms of Use ("Terms"). If you do
+              not agree, do not use the Service.
+            </p>
+            <p>
+              The Service is operated by Bayhart Ventures LLC ("Bayhart," "we," "us," or
+              "our"). These Terms form a legally binding agreement between you and Bayhart.
+              If you are using the Service on behalf of an organization, you represent that
+              you have authority to bind that organization to these Terms.
+            </p>
+          </Section>
+
+          <Section id="eligibility" title="2. Eligibility">
+            <p>
+              You must be at least 18 years of age to use the Service. By using the
+              Service, you represent and warrant that you meet this requirement. The Service
+              is not directed at children under 13, and we do not knowingly collect
+              information from children under 13.
+            </p>
+          </Section>
+
+          <Section id="description" title="3. Description of the Service">
+            <p>
+              Sandpiper is a jet-lag management application that generates personalized,
+              hour-by-hour circadian rhythm schedules for international travelers. Based on
+              your departure time, destination, and travel direction, the app provides
+              general, informational, and decision-support guidance based on circadian
+              science and other adjacent scientific research, including timed
+              recommendations related to sleep timing, light exposure, and behavioral and
+              supplement interventions.
+            </p>
+            <p>
+              Sandpiper is designed to assist with travel preparation and recovery. It is
+              not a substitute for medical advice, diagnosis, or treatment. See Section 5
+              (Health Disclaimer) for important limitations.
+            </p>
+          </Section>
+
+          <Section id="accounts" title="4. Accounts and Registration">
+            <p>
+              Certain features of the Service require you to create an account. You agree
+              to provide accurate, current, and complete information during registration and
+              to keep that information up to date. You are responsible for maintaining the
+              confidentiality of your account credentials and for all activity that occurs
+              under your account. Notify us immediately at{" "}
+              <a href="mailto:support@sandpiper-app.com">support@sandpiper-app.com</a> if
+              you suspect unauthorized access.
+            </p>
+            <p>
+              You may not share your account with others or create accounts by automated
+              means. We reserve the right to suspend or terminate accounts that violate
+              these Terms.
+            </p>
+          </Section>
+
+          <Section id="health" title="5. Health Disclaimer">
+            <p>
+              <strong>Sandpiper is a wellness tool, not a medical device.</strong> The
+              schedules and recommendations generated by the Service are based on published
+              circadian science research and are provided for general informational purposes
+              only. They do not constitute medical advice and are not a substitute for
+              consultation with a qualified healthcare provider.
+            </p>
+            <p>
+              Individual responses to circadian guidance, sleep timing, light exposure, and
+              behavioral and supplement recommendations vary significantly. The Service does
+              not recommend specific dosages and does not account for your individual health
+              conditions, medications, or other supplements you may be taking. Certain
+              supplements and interventions referenced by the Service may be subject to
+              different regulatory requirements across jurisdictions. It is your
+              responsibility to verify the legal status and appropriate use of any
+              supplement in your location. Before acting on any recommendation — particularly
+              if you have a sleep disorder, take prescription medication, are pregnant, or
+              have any underlying health condition — consult a qualified healthcare provider.
+            </p>
+            <p>
+              <strong>Do not use Sandpiper while driving, operating a vehicle or machinery,
+              or during any activity that requires your full attention.</strong> The Service
+              is not intended to be used in real time during safety-critical tasks.
+            </p>
+            <p>
+              The Service does not determine whether you are fit, alert, or safe to perform
+              any specific activity, including but not limited to flying an aircraft,
+              operating commercial vehicles, performing medical procedures, or any other
+              duty where impairment poses a risk. All decisions involving safety,
+              alertness, performance, or physical activity remain solely your
+              responsibility. Nothing in these Terms or your use of the Service creates any
+              fiduciary, advisory, or special duty of care between you and Bayhart Ventures
+              LLC.
+            </p>
+            <p>
+              Bayhart Ventures LLC is not liable for any adverse effects arising from your
+              use of, or reliance on, the schedules or recommendations provided by the
+              Service.
+            </p>
+          </Section>
+
+          <Section id="subscription" title="6. Free Trial and Subscription">
+            <SubSection title="6.1 Free Trial">
+              <p>
+                New users may access the full features of Sandpiper during a limited free
+                trial period. The duration of the free trial will be disclosed in the app
+                at the time of sign-up. No payment is required during the trial. At the end
+                of the trial period, continued access to premium features requires an active
+                paid subscription.
+              </p>
+            </SubSection>
+            <SubSection title="6.2 Subscription Plans">
+              <p>
+                Sandpiper offers subscription plans on a monthly or annual basis, as
+                presented in the app. Prices are listed in your local currency where
+                available and are subject to applicable taxes. Subscription fees are charged
+                to your payment method through the Apple App Store or Google Play Store
+                ("App Store"), depending on your platform.
+              </p>
+            </SubSection>
+            <SubSection title="6.3 Auto-Renewal">
+              <p>
+                Subscriptions automatically renew at the end of each billing period unless
+                you cancel at least 24 hours before the renewal date. Renewal charges are
+                processed at the rate current at the time of renewal. We will notify you of
+                any price increases at least 30 days before they take effect.
+              </p>
+            </SubSection>
+            <SubSection title="6.4 Cancellation">
+              <p>
+                You may cancel your subscription at any time through your App Store account
+                settings. Cancellation takes effect at the end of the current billing
+                period. You will retain access to premium features until that date. We do
+                not issue refunds for partial billing periods except where required by
+                applicable law or App Store policy.
+              </p>
+            </SubSection>
+            <SubSection title="6.5 Free Features">
+              <p>
+                A limited set of features will remain available to users without a paid
+                subscription. We reserve the right to modify the scope of free features at
+                any time with reasonable notice.
+              </p>
+            </SubSection>
+          </Section>
+
+          <Section id="conduct" title="7. Acceptable Use">
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use the Service for any unlawful purpose or in violation of these Terms</li>
+              <li>
+                Reverse-engineer, decompile, or attempt to extract the source code of the
+                app
+              </li>
+              <li>
+                Scrape, crawl, or use automated tools to access or collect data from the
+                Service
+              </li>
+              <li>
+                Interfere with or disrupt the integrity or performance of the Service or
+                its underlying infrastructure
+              </li>
+              <li>
+                Attempt to gain unauthorized access to any account, system, or network
+                associated with the Service
+              </li>
+              <li>
+                Resell, sublicense, or commercially exploit the Service without our prior
+                written consent
+              </li>
+              <li>
+                Use any content, data, or output from the Service to train, fine-tune, or
+                otherwise develop any machine learning or artificial intelligence model or
+                system
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="ip" title="8. Intellectual Property">
+            <p>
+              All content, design, code, trademarks, logos, and other materials made
+              available through the Service are owned by or licensed to Bayhart Ventures LLC
+              and are protected by applicable intellectual property laws. Nothing in these
+              Terms grants you any right, title, or interest in the Service or its content
+              beyond the limited license to use the Service for its intended personal,
+              non-commercial purpose.
+            </p>
+            <p>
+              If you provide us with feedback, suggestions, or ideas regarding the Service,
+              you grant us a perpetual, irrevocable, royalty-free license to use that
+              feedback for any purpose without obligation to you.
+            </p>
+          </Section>
+
+          <Section id="privacy" title="9. Privacy">
+            <p>
+              Your use of the Service is also governed by our{" "}
+              <a href="/privacy" className="text-accent underline underline-offset-2 hover:text-accent/80 transition-colors">
+                Privacy Policy
+              </a>
+              , which is incorporated into these Terms by reference. Please review the
+              Privacy Policy to understand how we collect, use, and protect your
+              information.
+            </p>
+          </Section>
+
+          <Section id="third-party" title="10. Third-Party Services">
+            <p>
+              The Service may integrate with or link to third-party services, including the
+              Apple App Store, Google Play Store, and analytics or infrastructure providers.
+              Your use of those services is governed by their own terms and privacy
+              policies. We are not responsible for the practices or content of any
+              third-party service.
+            </p>
+            <p>
+              The Service uses Google Fonts to load typefaces. By using the Service, your
+              browser may make requests to Google's servers. See Google's privacy policy for
+              details on how that data is handled.
+            </p>
+          </Section>
+
+          <Section id="disclaimers" title="11. Disclaimers">
+            <p>
+              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY
+              KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO
+              NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF
+              HARMFUL COMPONENTS.
+            </p>
+            <p>
+              Circadian science is an evolving field. While Sandpiper's recommendations are
+              grounded in published research, we make no warranty that any schedule will
+              eliminate or reduce jet lag for any individual user.
+            </p>
+          </Section>
+
+          <Section id="liability" title="12. Limitation of Liability">
+            <p>
+              TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, BAYHART VENTURES LLC AND
+              ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS WILL NOT BE LIABLE FOR ANY
+              INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY
+              LOSS OF PROFITS OR REVENUE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF
+              OR INABILITY TO USE THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE
+              POSSIBILITY OF SUCH DAMAGES.
+            </p>
+            <p>
+              OUR TOTAL LIABILITY TO YOU FOR ANY CLAIM ARISING FROM OR RELATED TO THESE
+              TERMS OR THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE TOTAL FEES YOU
+              PAID US IN THE SIX (6) MONTHS PRECEDING THE CLAIM OR (B) $100 USD.
+            </p>
+          </Section>
+
+          <Section id="indemnification" title="13. Indemnification">
+            <p>
+              You agree to indemnify, defend, and hold harmless Bayhart Ventures LLC and
+              its affiliates, officers, directors, and employees from any claims, damages,
+              losses, liabilities, and expenses (including reasonable attorneys' fees)
+              arising out of your use of the Service, your violation of these Terms, or
+              your violation of any rights of a third party.
+            </p>
+          </Section>
+
+          <Section id="termination" title="14. Termination">
+            <p>
+              We may suspend or terminate your access to the Service at any time, with or
+              without cause, and with or without notice. Upon termination, your right to use
+              the Service ceases immediately. Provisions of these Terms that by their nature
+              should survive termination will survive, including Sections 5, 8, 11, 12, 13,
+              and 15.
+            </p>
+          </Section>
+
+          <Section id="changes" title="15. Changes to These Terms">
+            <p>
+              We may update these Terms from time to time. When we make material changes,
+              we will notify you by updating the effective date at the top of this page and,
+              where appropriate, by in-app notification or email. Your continued use of the
+              Service after changes take effect constitutes your acceptance of the revised
+              Terms.
+            </p>
+          </Section>
+
+          <Section id="governing-law" title="16. Governing Law and Disputes">
+            <p>
+              Before filing any legal claim, you agree to contact us at{" "}
+              <a href="mailto:support@sandpiper-app.com">support@sandpiper-app.com</a> and
+              give us 30 days to attempt to resolve the dispute informally. Neither party
+              may initiate formal proceedings during this period except to seek emergency
+              injunctive relief. If the dispute is not resolved within 30 days of your
+              notice, either party may proceed with formal legal action.
+            </p>
+            <p>
+              These Terms are governed by the laws of the State of California, without
+              regard to its conflict of law principles. Any dispute arising from or relating
+              to these Terms or the Service will be resolved exclusively in the state or
+              federal courts located in California, and you consent to personal jurisdiction
+              in those courts.
+            </p>
+            <p>
+              To the extent permitted by law, you waive any right to a jury trial in
+              connection with any dispute related to these Terms or the Service.
+            </p>
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, ANY CLAIM ARISING OUT OF OR RELATING
+              TO THESE TERMS OR THE SERVICE MUST BE BROUGHT WITHIN THREE (3) MONTHS AFTER
+              THE CAUSE OF ACTION ARISES. CLAIMS NOT BROUGHT WITHIN THAT PERIOD ARE
+              PERMANENTLY BARRED.
+            </p>
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALL DISPUTES MUST BE BROUGHT IN YOUR
+              INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED
+              CLASS ACTION, COLLECTIVE ACTION, OR REPRESENTATIVE PROCEEDING. YOU WAIVE ANY
+              RIGHT TO BRING OR PARTICIPATE IN A CLASS ACTION AGAINST BAYHART VENTURES LLC.
+            </p>
+          </Section>
+
+          <Section id="general" title="17. General">
+            <p>
+              These Terms, together with our Privacy Policy, constitute the entire agreement
+              between you and Bayhart Ventures LLC regarding the Service and supersede all
+              prior agreements. If any provision is found unenforceable, the remaining
+              provisions will continue in full force. Our failure to enforce any right or
+              provision is not a waiver of that right. You may not assign your rights under
+              these Terms without our written consent. We may assign our rights freely.
+            </p>
+          </Section>
+
+          <Section id="contact" title="18. Contact">
+            <p>
+              If you have questions about these Terms, please contact us at:
+            </p>
+            <div className="mt-4 rounded-xl border border-border bg-muted/50 px-6 py-5 text-sm leading-relaxed">
+              <p className="font-semibold text-foreground">Bayhart Ventures LLC</p>
+              <p className="text-muted-foreground mt-1">
+                <a
+                  href="mailto:support@sandpiper-app.com"
+                  className="text-accent underline underline-offset-2 hover:text-accent/80 transition-colors"
+                >
+                  support@sandpiper-app.com
+                </a>
+              </p>
+            </div>
+          </Section>
+        </div>
+
+      </main>
+
+      <Footer />
+
+      <style>{`
+        .prose-legal p {
+          color: var(--color-foreground);
+          opacity: 0.85;
+          line-height: 1.75;
+          margin-bottom: 1rem;
+          font-size: 15px;
+        }
+        .prose-legal ul {
+          list-style: disc;
+          padding-left: 1.5rem;
+          margin-bottom: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+        }
+        .prose-legal ul li {
+          color: var(--color-foreground);
+          opacity: 0.8;
+          font-size: 15px;
+          line-height: 1.6;
+        }
+        .prose-legal strong {
+          color: var(--color-foreground);
+          opacity: 1;
+          font-weight: 600;
+        }
+        .prose-legal a {
+          color: var(--color-accent);
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function Section({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section id={id} className="mb-10 scroll-mt-24">
+      <h2 className="text-lg font-semibold text-foreground mb-4 leading-snug">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="mb-5">
+      <h3 className="text-[13px] font-semibold uppercase tracking-wide text-muted-foreground mb-2">
+        {title}
+      </h3>
+      {children}
+    </div>
+  );
+}

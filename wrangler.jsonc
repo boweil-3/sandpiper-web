@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sandpiper-web",
+  "compatibility_date": "2025-09-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/server.ts",
+  "routes": [
+    { "pattern": "sandpiper-app.com", "custom_domain": true },
+    { "pattern": "www.sandpiper-app.com", "custom_domain": true }
+  ],
+}
