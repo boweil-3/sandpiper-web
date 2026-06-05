@@ -17,6 +17,7 @@ import { Route as LangRouteImport } from './routes/$lang'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangIndexRouteImport } from './routes/$lang/index'
 import { Route as LangSupportRouteImport } from './routes/$lang/support'
+import { Route as LangDeleteAccountRouteImport } from './routes/$lang/delete-account'
 import { Route as LangSplatRouteImport } from './routes/$lang/$'
 
 const TermsRoute = TermsRouteImport.update({
@@ -59,6 +60,11 @@ const LangSupportRoute = LangSupportRouteImport.update({
   path: '/support',
   getParentRoute: () => LangRoute,
 } as any)
+const LangDeleteAccountRoute = LangDeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangSplatRoute = LangSplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/$lang/$': typeof LangSplatRoute
+  '/$lang/delete-account': typeof LangDeleteAccountRoute
   '/$lang/support': typeof LangSupportRoute
   '/$lang/': typeof LangIndexRoute
 }
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/$lang/$': typeof LangSplatRoute
+  '/$lang/delete-account': typeof LangDeleteAccountRoute
   '/$lang/support': typeof LangSupportRoute
   '/$lang': typeof LangIndexRoute
 }
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/$lang/$': typeof LangSplatRoute
+  '/$lang/delete-account': typeof LangDeleteAccountRoute
   '/$lang/support': typeof LangSupportRoute
   '/$lang/': typeof LangIndexRoute
 }
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/$lang/$'
+    | '/$lang/delete-account'
     | '/$lang/support'
     | '/$lang/'
   fileRoutesByTo: FileRoutesByTo
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/$lang/$'
+    | '/$lang/delete-account'
     | '/$lang/support'
     | '/$lang'
   id:
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/$lang/$'
+    | '/$lang/delete-account'
     | '/$lang/support'
     | '/$lang/'
   fileRoutesById: FileRoutesById
@@ -200,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangSupportRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/delete-account': {
+      id: '/$lang/delete-account'
+      path: '/delete-account'
+      fullPath: '/$lang/delete-account'
+      preLoaderRoute: typeof LangDeleteAccountRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/$': {
       id: '/$lang/$'
       path: '/$'
@@ -212,12 +231,14 @@ declare module '@tanstack/react-router' {
 
 interface LangRouteChildren {
   LangSplatRoute: typeof LangSplatRoute
+  LangDeleteAccountRoute: typeof LangDeleteAccountRoute
   LangSupportRoute: typeof LangSupportRoute
   LangIndexRoute: typeof LangIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
   LangSplatRoute: LangSplatRoute,
+  LangDeleteAccountRoute: LangDeleteAccountRoute,
   LangSupportRoute: LangSupportRoute,
   LangIndexRoute: LangIndexRoute,
 }

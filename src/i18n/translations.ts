@@ -67,6 +67,7 @@ export type TranslationKey =
   | "footer.privacy"
   | "footer.terms"
   | "footer.support"
+  | "footer.deleteAccount"
   | "footer.copy"
   | "support.eyebrow"
   | "support.title"
@@ -77,7 +78,33 @@ export type TranslationKey =
   | "support.privacy"
   | "support.terms"
   | "support.meta.title"
-  | "support.meta.description";
+  | "support.meta.description"
+  | "deleteAccount.eyebrow"
+  | "deleteAccount.title"
+  | "deleteAccount.howTo.title"
+  | "deleteAccount.howTo.intro"
+  | "deleteAccount.howTo.step1"
+  | "deleteAccount.howTo.step2.before"
+  | "deleteAccount.howTo.step2.settings"
+  | "deleteAccount.howTo.step3.before"
+  | "deleteAccount.howTo.step3.action"
+  | "deleteAccount.howTo.step3.after"
+  | "deleteAccount.howTo.outro"
+  | "deleteAccount.deleted.title"
+  | "deleteAccount.deleted.intro"
+  | "deleteAccount.deleted.item1"
+  | "deleteAccount.deleted.item2"
+  | "deleteAccount.retained.title"
+  | "deleteAccount.retained.intro"
+  | "deleteAccount.retained.item1"
+  | "deleteAccount.retained.item2"
+  | "deleteAccount.retained.item3"
+  | "deleteAccount.retained.p1"
+  | "deleteAccount.retained.p2"
+  | "deleteAccount.contact.title"
+  | "deleteAccount.contact.prefix"
+  | "deleteAccount.meta.title"
+  | "deleteAccount.meta.description";
 
 type Dict = Record<TranslationKey, string>;
 
@@ -150,6 +177,7 @@ const en: Dict = {
   "footer.privacy": "Privacy",
   "footer.terms": "Terms",
   "footer.support": "Support",
+  "footer.deleteAccount": "Delete Account",
   "footer.copy": "© 2026 Sandpiper · Made for travelers who cross continents",
   "support.eyebrow": "Help",
   "support.title": "Support",
@@ -161,6 +189,35 @@ const en: Dict = {
   "support.terms": "Terms",
   "support.meta.title": "Support — Sandpiper",
   "support.meta.description": "Get help with the Sandpiper app.",
+  "deleteAccount.eyebrow": "Account",
+  "deleteAccount.title": "Delete Your Account",
+  "deleteAccount.howTo.title": "How to delete your account",
+  "deleteAccount.howTo.intro": "You can delete your Sandpiper account directly from the app:",
+  "deleteAccount.howTo.step1": "Open the Sandpiper app",
+  "deleteAccount.howTo.step2.before": "Go to",
+  "deleteAccount.howTo.step2.settings": "Settings → Account",
+  "deleteAccount.howTo.step3.before": "Tap",
+  "deleteAccount.howTo.step3.action": "\"Delete Account\"",
+  "deleteAccount.howTo.step3.after": "and confirm",
+  "deleteAccount.howTo.outro": "Your account is deleted immediately once confirmed. No waiting period.",
+  "deleteAccount.deleted.title": "What gets deleted immediately",
+  "deleteAccount.deleted.intro": "The following is permanently removed the moment you confirm deletion:",
+  "deleteAccount.deleted.item1": "Your email address and all personal information",
+  "deleteAccount.deleted.item2": "Your active sessions — you are signed out on all devices immediately",
+  "deleteAccount.retained.title": "What is retained",
+  "deleteAccount.retained.intro": "A small anonymized record is kept after deletion. It contains only:",
+  "deleteAccount.retained.item1": "Your user ID (a hash — not your email or any identifiable data)",
+  "deleteAccount.retained.item2": "The date your account was deleted",
+  "deleteAccount.retained.item3": "Subscription status and whether you have ever paid",
+  "deleteAccount.retained.p1":
+    "No personally identifiable information is stored in this record. It exists solely to prevent fraud on re-registration and is retained indefinitely for that purpose.",
+  "deleteAccount.retained.p2":
+    "Trip data (flight itineraries) may also be retained, but it is permanently unlinked from your personal information at the time of deletion.",
+  "deleteAccount.contact.title": "Questions?",
+  "deleteAccount.contact.prefix":
+    "If you have questions about your data or need help deleting your account, contact us at",
+  "deleteAccount.meta.title": "Delete Your Account — Sandpiper",
+  "deleteAccount.meta.description": "How to delete your Sandpiper account and what happens to your data.",
 };
 
 const fr: Dict = {
@@ -232,6 +289,7 @@ const fr: Dict = {
   "footer.privacy": "Confidentialité",
   "footer.terms": "Conditions",
   "footer.support": "Assistance",
+  "footer.deleteAccount": "Supprimer le compte",
   "footer.copy": "© 2026 Sandpiper · Pour ceux qui traversent les continents",
   "support.eyebrow": "Aide",
   "support.title": "Assistance",
@@ -243,6 +301,35 @@ const fr: Dict = {
   "support.terms": "Conditions",
   "support.meta.title": "Assistance — Sandpiper",
   "support.meta.description": "Obtenez de l'aide pour l'application Sandpiper.",
+  "deleteAccount.eyebrow": "Compte",
+  "deleteAccount.title": "Supprimer votre compte",
+  "deleteAccount.howTo.title": "Comment supprimer votre compte",
+  "deleteAccount.howTo.intro": "Vous pouvez supprimer votre compte Sandpiper directement depuis l'application :",
+  "deleteAccount.howTo.step1": "Ouvrez l'application Sandpiper",
+  "deleteAccount.howTo.step2.before": "Allez dans",
+  "deleteAccount.howTo.step2.settings": "Réglages → Compte",
+  "deleteAccount.howTo.step3.before": "Appuyez sur",
+  "deleteAccount.howTo.step3.action": "« Supprimer le compte »",
+  "deleteAccount.howTo.step3.after": "et confirmez",
+  "deleteAccount.howTo.outro": "Votre compte est supprimé immédiatement après confirmation. Aucun délai d'attente.",
+  "deleteAccount.deleted.title": "Ce qui est supprimé immédiatement",
+  "deleteAccount.deleted.intro": "Les éléments suivants sont définitivement supprimés dès que vous confirmez :",
+  "deleteAccount.deleted.item1": "Votre adresse e-mail et toutes vos informations personnelles",
+  "deleteAccount.deleted.item2": "Vos sessions actives — vous êtes déconnecté sur tous les appareils immédiatement",
+  "deleteAccount.retained.title": "Ce qui est conservé",
+  "deleteAccount.retained.intro": "Un petit enregistrement anonymisé est conservé après la suppression. Il contient uniquement :",
+  "deleteAccount.retained.item1": "Votre identifiant utilisateur (un hash — pas votre e-mail ni aucune donnée identifiable)",
+  "deleteAccount.retained.item2": "La date de suppression de votre compte",
+  "deleteAccount.retained.item3": "Le statut d'abonnement et si vous avez déjà payé",
+  "deleteAccount.retained.p1":
+    "Aucune information personnellement identifiable n'est stockée dans cet enregistrement. Il existe uniquement pour prévenir la fraude lors d'une nouvelle inscription et est conservé indéfiniment à cette fin.",
+  "deleteAccount.retained.p2":
+    "Les données de voyage (itinéraires de vol) peuvent également être conservées, mais elles sont définitivement dissociées de vos informations personnelles au moment de la suppression.",
+  "deleteAccount.contact.title": "Des questions ?",
+  "deleteAccount.contact.prefix":
+    "Si vous avez des questions sur vos données ou besoin d'aide pour supprimer votre compte, contactez-nous à",
+  "deleteAccount.meta.title": "Supprimer votre compte — Sandpiper",
+  "deleteAccount.meta.description": "Comment supprimer votre compte Sandpiper et ce qu'il advient de vos données.",
 };
 
 const es: Dict = {
@@ -314,6 +401,7 @@ const es: Dict = {
   "footer.privacy": "Privacidad",
   "footer.terms": "Términos",
   "footer.support": "Soporte",
+  "footer.deleteAccount": "Eliminar cuenta",
   "footer.copy": "© 2026 Sandpiper · Para quienes cruzan continentes",
   "support.eyebrow": "Ayuda",
   "support.title": "Soporte",
@@ -325,6 +413,35 @@ const es: Dict = {
   "support.terms": "Términos",
   "support.meta.title": "Soporte — Sandpiper",
   "support.meta.description": "Obtén ayuda con la aplicación Sandpiper.",
+  "deleteAccount.eyebrow": "Cuenta",
+  "deleteAccount.title": "Eliminar tu cuenta",
+  "deleteAccount.howTo.title": "Cómo eliminar tu cuenta",
+  "deleteAccount.howTo.intro": "Puedes eliminar tu cuenta de Sandpiper directamente desde la aplicación:",
+  "deleteAccount.howTo.step1": "Abre la aplicación Sandpiper",
+  "deleteAccount.howTo.step2.before": "Ve a",
+  "deleteAccount.howTo.step2.settings": "Ajustes → Cuenta",
+  "deleteAccount.howTo.step3.before": "Toca",
+  "deleteAccount.howTo.step3.action": "«Eliminar cuenta»",
+  "deleteAccount.howTo.step3.after": "y confirma",
+  "deleteAccount.howTo.outro": "Tu cuenta se elimina de inmediato una vez confirmada. Sin período de espera.",
+  "deleteAccount.deleted.title": "Qué se elimina de inmediato",
+  "deleteAccount.deleted.intro": "Lo siguiente se elimina permanentemente en el momento en que confirmas:",
+  "deleteAccount.deleted.item1": "Tu dirección de correo electrónico y toda tu información personal",
+  "deleteAccount.deleted.item2": "Tus sesiones activas — se cierra la sesión en todos los dispositivos de inmediato",
+  "deleteAccount.retained.title": "Qué se conserva",
+  "deleteAccount.retained.intro": "Se conserva un pequeño registro anonimizado después de la eliminación. Solo contiene:",
+  "deleteAccount.retained.item1": "Tu ID de usuario (un hash — no tu correo ni ningún dato identificable)",
+  "deleteAccount.retained.item2": "La fecha en que se eliminó tu cuenta",
+  "deleteAccount.retained.item3": "El estado de la suscripción y si alguna vez has pagado",
+  "deleteAccount.retained.p1":
+    "No se almacena información personalmente identificable en este registro. Existe únicamente para prevenir fraudes en nuevos registros y se conserva indefinidamente con ese fin.",
+  "deleteAccount.retained.p2":
+    "Los datos de viaje (itinerarios de vuelo) también pueden conservarse, pero se desvinculan permanentemente de tu información personal en el momento de la eliminación.",
+  "deleteAccount.contact.title": "¿Preguntas?",
+  "deleteAccount.contact.prefix":
+    "Si tienes preguntas sobre tus datos o necesitas ayuda para eliminar tu cuenta, contáctanos en",
+  "deleteAccount.meta.title": "Eliminar tu cuenta — Sandpiper",
+  "deleteAccount.meta.description": "Cómo eliminar tu cuenta de Sandpiper y qué ocurre con tus datos.",
 };
 
 const de: Dict = {
@@ -396,6 +513,7 @@ const de: Dict = {
   "footer.privacy": "Datenschutz",
   "footer.terms": "AGB",
   "footer.support": "Support",
+  "footer.deleteAccount": "Konto löschen",
   "footer.copy": "© 2026 Sandpiper · Für Reisende, die Kontinente überqueren",
   "support.eyebrow": "Hilfe",
   "support.title": "Support",
@@ -407,6 +525,35 @@ const de: Dict = {
   "support.terms": "AGB",
   "support.meta.title": "Support — Sandpiper",
   "support.meta.description": "Hilfe zur Sandpiper-App erhalten.",
+  "deleteAccount.eyebrow": "Konto",
+  "deleteAccount.title": "Konto löschen",
+  "deleteAccount.howTo.title": "So löschen Sie Ihr Konto",
+  "deleteAccount.howTo.intro": "Sie können Ihr Sandpiper-Konto direkt in der App löschen:",
+  "deleteAccount.howTo.step1": "Öffnen Sie die Sandpiper-App",
+  "deleteAccount.howTo.step2.before": "Gehen Sie zu",
+  "deleteAccount.howTo.step2.settings": "Einstellungen → Konto",
+  "deleteAccount.howTo.step3.before": "Tippen Sie auf",
+  "deleteAccount.howTo.step3.action": "„Konto löschen“",
+  "deleteAccount.howTo.step3.after": "und bestätigen Sie",
+  "deleteAccount.howTo.outro": "Ihr Konto wird nach der Bestätigung sofort gelöscht. Keine Wartezeit.",
+  "deleteAccount.deleted.title": "Was sofort gelöscht wird",
+  "deleteAccount.deleted.intro": "Folgendes wird beim Bestätigen dauerhaft entfernt:",
+  "deleteAccount.deleted.item1": "Ihre E-Mail-Adresse und alle persönlichen Informationen",
+  "deleteAccount.deleted.item2": "Ihre aktiven Sitzungen — Sie werden auf allen Geräten sofort abgemeldet",
+  "deleteAccount.retained.title": "Was aufbewahrt wird",
+  "deleteAccount.retained.intro": "Nach der Löschung wird ein kleiner anonymisierter Datensatz aufbewahrt. Er enthält nur:",
+  "deleteAccount.retained.item1": "Ihre Benutzer-ID (ein Hash — nicht Ihre E-Mail oder identifizierbare Daten)",
+  "deleteAccount.retained.item2": "Das Datum der Kontolöschung",
+  "deleteAccount.retained.item3": "Abonnementstatus und ob Sie jemals bezahlt haben",
+  "deleteAccount.retained.p1":
+    "In diesem Datensatz werden keine personenbezogenen Daten gespeichert. Er dient ausschließlich der Betrugsprävention bei erneuter Registrierung und wird dafür unbegrenzt aufbewahrt.",
+  "deleteAccount.retained.p2":
+    "Reisedaten (Flugpläne) können ebenfalls aufbewahrt werden, werden aber zum Zeitpunkt der Löschung dauerhaft von Ihren persönlichen Informationen getrennt.",
+  "deleteAccount.contact.title": "Fragen?",
+  "deleteAccount.contact.prefix":
+    "Wenn Sie Fragen zu Ihren Daten haben oder Hilfe beim Löschen Ihres Kontos benötigen, kontaktieren Sie uns unter",
+  "deleteAccount.meta.title": "Konto löschen — Sandpiper",
+  "deleteAccount.meta.description": "So löschen Sie Ihr Sandpiper-Konto und was mit Ihren Daten geschieht.",
 };
 
 const pt: Dict = {
@@ -478,6 +625,7 @@ const pt: Dict = {
   "footer.privacy": "Privacidade",
   "footer.terms": "Termos",
   "footer.support": "Suporte",
+  "footer.deleteAccount": "Excluir conta",
   "footer.copy": "© 2026 Sandpiper · Para quem cruza continentes",
   "support.eyebrow": "Ajuda",
   "support.title": "Suporte",
@@ -489,6 +637,35 @@ const pt: Dict = {
   "support.terms": "Termos",
   "support.meta.title": "Suporte — Sandpiper",
   "support.meta.description": "Obtenha ajuda com o aplicativo Sandpiper.",
+  "deleteAccount.eyebrow": "Conta",
+  "deleteAccount.title": "Excluir sua conta",
+  "deleteAccount.howTo.title": "Como excluir sua conta",
+  "deleteAccount.howTo.intro": "Você pode excluir sua conta Sandpiper diretamente no aplicativo:",
+  "deleteAccount.howTo.step1": "Abra o aplicativo Sandpiper",
+  "deleteAccount.howTo.step2.before": "Vá para",
+  "deleteAccount.howTo.step2.settings": "Configurações → Conta",
+  "deleteAccount.howTo.step3.before": "Toque em",
+  "deleteAccount.howTo.step3.action": "«Excluir conta»",
+  "deleteAccount.howTo.step3.after": "e confirme",
+  "deleteAccount.howTo.outro": "Sua conta é excluída imediatamente após a confirmação. Sem período de espera.",
+  "deleteAccount.deleted.title": "O que é excluído imediatamente",
+  "deleteAccount.deleted.intro": "O seguinte é removido permanentemente no momento da confirmação:",
+  "deleteAccount.deleted.item1": "Seu endereço de e-mail e todas as informações pessoais",
+  "deleteAccount.deleted.item2": "Suas sessões ativas — você é desconectado em todos os dispositivos imediatamente",
+  "deleteAccount.retained.title": "O que é mantido",
+  "deleteAccount.retained.intro": "Um pequeno registro anonimizado é mantido após a exclusão. Ele contém apenas:",
+  "deleteAccount.retained.item1": "Seu ID de usuário (um hash — não seu e-mail nem dados identificáveis)",
+  "deleteAccount.retained.item2": "A data em que sua conta foi excluída",
+  "deleteAccount.retained.item3": "Status da assinatura e se você já pagou",
+  "deleteAccount.retained.p1":
+    "Nenhuma informação pessoalmente identificável é armazenada neste registro. Ele existe apenas para prevenir fraudes em novos cadastros e é mantido indefinidamente para esse fim.",
+  "deleteAccount.retained.p2":
+    "Dados de viagem (itinerários de voo) também podem ser mantidos, mas são permanentemente desvinculados das suas informações pessoais no momento da exclusão.",
+  "deleteAccount.contact.title": "Dúvidas?",
+  "deleteAccount.contact.prefix":
+    "Se você tiver dúvidas sobre seus dados ou precisar de ajuda para excluir sua conta, entre em contato em",
+  "deleteAccount.meta.title": "Excluir sua conta — Sandpiper",
+  "deleteAccount.meta.description": "Como excluir sua conta Sandpiper e o que acontece com seus dados.",
 };
 
 const zhCN: Dict = {
@@ -550,6 +727,7 @@ const zhCN: Dict = {
   "footer.privacy": "隐私",
   "footer.terms": "条款",
   "footer.support": "支持",
+  "footer.deleteAccount": "删除账户",
   "footer.copy": "© 2026 Sandpiper · 为跨越大洲的旅行者而做",
   "support.eyebrow": "帮助",
   "support.title": "支持",
@@ -561,6 +739,34 @@ const zhCN: Dict = {
   "support.terms": "条款",
   "support.meta.title": "支持 — Sandpiper",
   "support.meta.description": "获取 Sandpiper 应用帮助。",
+  "deleteAccount.eyebrow": "账户",
+  "deleteAccount.title": "删除您的账户",
+  "deleteAccount.howTo.title": "如何删除您的账户",
+  "deleteAccount.howTo.intro": "您可以直接在应用中删除 Sandpiper 账户：",
+  "deleteAccount.howTo.step1": "打开 Sandpiper 应用",
+  "deleteAccount.howTo.step2.before": "前往",
+  "deleteAccount.howTo.step2.settings": "设置 → 账户",
+  "deleteAccount.howTo.step3.before": "点击",
+  "deleteAccount.howTo.step3.action": "「删除账户」",
+  "deleteAccount.howTo.step3.after": "并确认",
+  "deleteAccount.howTo.outro": "确认后账户将立即删除，无需等待期。",
+  "deleteAccount.deleted.title": "立即删除的内容",
+  "deleteAccount.deleted.intro": "确认删除后，以下内容将永久移除：",
+  "deleteAccount.deleted.item1": "您的电子邮件地址及所有个人信息",
+  "deleteAccount.deleted.item2": "您的活跃会话——所有设备将立即退出登录",
+  "deleteAccount.retained.title": "保留的内容",
+  "deleteAccount.retained.intro": "删除后会保留一条小型匿名记录，仅包含：",
+  "deleteAccount.retained.item1": "您的用户 ID（哈希值——非电子邮件或任何可识别数据）",
+  "deleteAccount.retained.item2": "账户删除日期",
+  "deleteAccount.retained.item3": "订阅状态及是否曾付费",
+  "deleteAccount.retained.p1":
+    "该记录不存储任何个人身份信息，仅用于防止重复注册欺诈，并为此目的无限期保留。",
+  "deleteAccount.retained.p2":
+    "行程数据（航班行程）也可能被保留，但在删除时已与您的个人信息永久解除关联。",
+  "deleteAccount.contact.title": "有疑问？",
+  "deleteAccount.contact.prefix": "如对数据有疑问或需要协助删除账户，请联系",
+  "deleteAccount.meta.title": "删除您的账户 — Sandpiper",
+  "deleteAccount.meta.description": "如何删除 Sandpiper 账户以及数据如何处理。",
 };
 
 const zhTW: Dict = {
@@ -622,6 +828,7 @@ const zhTW: Dict = {
   "footer.privacy": "隱私",
   "footer.terms": "條款",
   "footer.support": "支援",
+  "footer.deleteAccount": "刪除帳戶",
   "footer.copy": "© 2026 Sandpiper · 為跨越大洲的旅行者而做",
   "support.eyebrow": "幫助",
   "support.title": "支援",
@@ -633,6 +840,34 @@ const zhTW: Dict = {
   "support.terms": "條款",
   "support.meta.title": "支援 — Sandpiper",
   "support.meta.description": "取得 Sandpiper 應用程式協助。",
+  "deleteAccount.eyebrow": "帳戶",
+  "deleteAccount.title": "刪除您的帳戶",
+  "deleteAccount.howTo.title": "如何刪除您的帳戶",
+  "deleteAccount.howTo.intro": "您可以直接在應用程式中刪除 Sandpiper 帳戶：",
+  "deleteAccount.howTo.step1": "開啟 Sandpiper 應用程式",
+  "deleteAccount.howTo.step2.before": "前往",
+  "deleteAccount.howTo.step2.settings": "設定 → 帳戶",
+  "deleteAccount.howTo.step3.before": "點擊",
+  "deleteAccount.howTo.step3.action": "「刪除帳戶」",
+  "deleteAccount.howTo.step3.after": "並確認",
+  "deleteAccount.howTo.outro": "確認後帳戶將立即刪除，無需等待期。",
+  "deleteAccount.deleted.title": "立即刪除的內容",
+  "deleteAccount.deleted.intro": "確認刪除後，以下內容將永久移除：",
+  "deleteAccount.deleted.item1": "您的電子郵件地址及所有個人資訊",
+  "deleteAccount.deleted.item2": "您的活躍工作階段——所有裝置將立即登出",
+  "deleteAccount.retained.title": "保留的內容",
+  "deleteAccount.retained.intro": "刪除後會保留一筆小型匿名記錄，僅包含：",
+  "deleteAccount.retained.item1": "您的使用者 ID（雜湊值——非電子郵件或任何可識別資料）",
+  "deleteAccount.retained.item2": "帳戶刪除日期",
+  "deleteAccount.retained.item3": "訂閱狀態及是否曾付費",
+  "deleteAccount.retained.p1":
+    "該記錄不儲存任何個人識別資訊，僅用於防止重複註冊詐欺，並為此目的無限期保留。",
+  "deleteAccount.retained.p2":
+    "行程資料（航班行程）也可能被保留，但在刪除時已與您的個人資訊永久解除關聯。",
+  "deleteAccount.contact.title": "有疑問？",
+  "deleteAccount.contact.prefix": "如對資料有疑問或需要協助刪除帳戶，請聯絡",
+  "deleteAccount.meta.title": "刪除您的帳戶 — Sandpiper",
+  "deleteAccount.meta.description": "如何刪除 Sandpiper 帳戶以及資料如何處理。",
 };
 
 const ja: Dict = {
@@ -694,6 +929,7 @@ const ja: Dict = {
   "footer.privacy": "プライバシー",
   "footer.terms": "利用規約",
   "footer.support": "サポート",
+  "footer.deleteAccount": "アカウント削除",
   "footer.copy": "© 2026 Sandpiper · 大陸を旅する人のために",
   "support.eyebrow": "ヘルプ",
   "support.title": "サポート",
@@ -705,6 +941,34 @@ const ja: Dict = {
   "support.terms": "利用規約",
   "support.meta.title": "サポート — Sandpiper",
   "support.meta.description": "Sandpiperアプリのサポートを受ける。",
+  "deleteAccount.eyebrow": "アカウント",
+  "deleteAccount.title": "アカウントを削除",
+  "deleteAccount.howTo.title": "アカウントの削除方法",
+  "deleteAccount.howTo.intro": "Sandpiperアカウントはアプリから直接削除できます：",
+  "deleteAccount.howTo.step1": "Sandpiperアプリを開く",
+  "deleteAccount.howTo.step2.before": "次に進む：",
+  "deleteAccount.howTo.step2.settings": "設定 → アカウント",
+  "deleteAccount.howTo.step3.before": "タップ：",
+  "deleteAccount.howTo.step3.action": "「アカウントを削除」",
+  "deleteAccount.howTo.step3.after": "を確認",
+  "deleteAccount.howTo.outro": "確認後、アカウントは即座に削除されます。待機期間はありません。",
+  "deleteAccount.deleted.title": "即座に削除されるもの",
+  "deleteAccount.deleted.intro": "削除を確認した時点で、以下は永久に削除されます：",
+  "deleteAccount.deleted.item1": "メールアドレスとすべての個人情報",
+  "deleteAccount.deleted.item2": "アクティブなセッション——すべてのデバイスから即座にサインアウトされます",
+  "deleteAccount.retained.title": "保持されるもの",
+  "deleteAccount.retained.intro": "削除後も小さな匿名化レコードが保持されます。含まれるのは以下のみです：",
+  "deleteAccount.retained.item1": "ユーザーID（ハッシュ——メールや識別可能なデータではありません）",
+  "deleteAccount.retained.item2": "アカウントが削除された日付",
+  "deleteAccount.retained.item3": "サブスクリプションの状態と過去に支払いがあったかどうか",
+  "deleteAccount.retained.p1":
+    "このレコードには個人を特定できる情報は保存されません。再登録時の不正防止のみを目的としており、その目的のために無期限に保持されます。",
+  "deleteAccount.retained.p2":
+    "旅行データ（フライト行程）も保持される場合がありますが、削除時に個人情報から永久に切り離されます。",
+  "deleteAccount.contact.title": "ご質問は？",
+  "deleteAccount.contact.prefix": "データに関するご質問やアカウント削除のサポートが必要な場合は、次までご連絡ください：",
+  "deleteAccount.meta.title": "アカウントを削除 — Sandpiper",
+  "deleteAccount.meta.description": "Sandpiperアカウントの削除方法とデータの扱いについて。",
 };
 
 const ko: Dict = {
@@ -766,6 +1030,7 @@ const ko: Dict = {
   "footer.privacy": "개인정보",
   "footer.terms": "약관",
   "footer.support": "지원",
+  "footer.deleteAccount": "계정 삭제",
   "footer.copy": "© 2026 Sandpiper · 대륙을 넘는 여행자를 위해",
   "support.eyebrow": "도움말",
   "support.title": "지원",
@@ -777,6 +1042,34 @@ const ko: Dict = {
   "support.terms": "약관",
   "support.meta.title": "지원 — Sandpiper",
   "support.meta.description": "Sandpiper 앱 지원을 받으세요.",
+  "deleteAccount.eyebrow": "계정",
+  "deleteAccount.title": "계정 삭제",
+  "deleteAccount.howTo.title": "계정 삭제 방법",
+  "deleteAccount.howTo.intro": "Sandpiper 계정은 앱에서 직접 삭제할 수 있습니다:",
+  "deleteAccount.howTo.step1": "Sandpiper 앱을 엽니다",
+  "deleteAccount.howTo.step2.before": "다음으로 이동:",
+  "deleteAccount.howTo.step2.settings": "설정 → 계정",
+  "deleteAccount.howTo.step3.before": "탭:",
+  "deleteAccount.howTo.step3.action": "「계정 삭제」",
+  "deleteAccount.howTo.step3.after": "후 확인",
+  "deleteAccount.howTo.outro": "확인 즉시 계정이 삭제됩니다. 대기 기간이 없습니다.",
+  "deleteAccount.deleted.title": "즉시 삭제되는 항목",
+  "deleteAccount.deleted.intro": "삭제를 확인하는 순간 다음 항목이 영구적으로 제거됩니다:",
+  "deleteAccount.deleted.item1": "이메일 주소 및 모든 개인 정보",
+  "deleteAccount.deleted.item2": "활성 세션 — 모든 기기에서 즉시 로그아웃됩니다",
+  "deleteAccount.retained.title": "보관되는 항목",
+  "deleteAccount.retained.intro": "삭제 후 소량의 익명화된 기록이 보관됩니다. 포함 내용:",
+  "deleteAccount.retained.item1": "사용자 ID(해시 — 이메일이나 식별 가능한 데이터가 아님)",
+  "deleteAccount.retained.item2": "계정이 삭제된 날짜",
+  "deleteAccount.retained.item3": "구독 상태 및 결제 이력 여부",
+  "deleteAccount.retained.p1":
+    "이 기록에는 개인 식별 정보가 저장되지 않습니다. 재가입 사기 방지 목적으로만 존재하며, 해당 목적을 위해 무기한 보관됩니다.",
+  "deleteAccount.retained.p2":
+    "여행 데이터(항공 일정)도 보관될 수 있지만, 삭제 시점에 개인 정보와 영구적으로 분리됩니다.",
+  "deleteAccount.contact.title": "질문이 있으신가요?",
+  "deleteAccount.contact.prefix": "데이터에 관한 질문이 있거나 계정 삭제에 도움이 필요하면 다음으로 문의해 주세요:",
+  "deleteAccount.meta.title": "계정 삭제 — Sandpiper",
+  "deleteAccount.meta.description": "Sandpiper 계정 삭제 방법 및 데이터 처리 안내.",
 };
 
 export const TRANSLATIONS: Record<LanguageCode, Dict> = {

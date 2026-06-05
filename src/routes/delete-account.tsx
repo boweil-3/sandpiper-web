@@ -1,37 +1,47 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { useT } from "@/i18n/LanguageProvider";
+import { TRANSLATIONS } from "@/i18n/translations";
+
+const FONT_LINKS = [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+  },
+] as const;
+
+export function deleteAccountHead(lang: keyof typeof TRANSLATIONS = "en") {
+  const copy = TRANSLATIONS[lang];
+  return {
+    meta: [
+      { title: copy["deleteAccount.meta.title"] },
+      { name: "description", content: copy["deleteAccount.meta.description"] },
+      { property: "og:title", content: copy["deleteAccount.meta.title"] },
+    ],
+    links: [...FONT_LINKS],
+  };
+}
 
 export const Route = createFileRoute("/delete-account")({
-  component: DeleteAccount,
-  head: () => ({
-    meta: [
-      { title: "Delete Your Account — Sandpiper" },
-      { name: "description", content: "How to delete your Sandpiper account and what happens to your data." },
-      { property: "og:title", content: "Delete Your Account — Sandpiper" },
-    ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
-      },
-    ],
-  }),
+  component: DeleteAccountPage,
+  head: () => deleteAccountHead(),
 });
 
-function DeleteAccount() {
+export function DeleteAccountPage() {
+  const { t } = useT();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
 
       <main className="mx-auto max-w-[720px] px-6 pb-24 pt-32">
-        {/* Header */}
         <div className="mb-12">
-          <p className="label-caps text-muted-foreground mb-3">Account</p>
+          <p className="label-caps text-muted-foreground mb-3">{t("deleteAccount.eyebrow")}</p>
           <h1 className="font-serif text-4xl sm:text-5xl text-foreground mb-4">
-            Delete Your Account
+            {t("deleteAccount.title")}
           </h1>
           <p className="text-sm text-muted-foreground">
             Sandpiper &nbsp;·&nbsp; sandpiper-app.com
@@ -40,48 +50,45 @@ function DeleteAccount() {
         </div>
 
         <div className="prose-legal">
-          <Section id="how-to" title="How to delete your account">
-            <p>You can delete your Sandpiper account directly from the app:</p>
+          <Section id="how-to" title={t("deleteAccount.howTo.title")}>
+            <p>{t("deleteAccount.howTo.intro")}</p>
             <ol>
-              <li>Open the Sandpiper app</li>
-              <li>Go to <strong>Settings → Account</strong></li>
-              <li>Tap <strong>"Delete Account"</strong> and confirm</li>
+              <li>{t("deleteAccount.howTo.step1")}</li>
+              <li>
+                {t("deleteAccount.howTo.step2.before")}{" "}
+                <strong>{t("deleteAccount.howTo.step2.settings")}</strong>
+              </li>
+              <li>
+                {t("deleteAccount.howTo.step3.before")}{" "}
+                <strong>{t("deleteAccount.howTo.step3.action")}</strong>{" "}
+                {t("deleteAccount.howTo.step3.after")}
+              </li>
             </ol>
-            <p>Your account is deleted immediately once confirmed. No waiting period.</p>
+            <p>{t("deleteAccount.howTo.outro")}</p>
           </Section>
 
-          <Section id="deleted" title="What gets deleted immediately">
-            <p>The following is permanently removed the moment you confirm deletion:</p>
+          <Section id="deleted" title={t("deleteAccount.deleted.title")}>
+            <p>{t("deleteAccount.deleted.intro")}</p>
             <ul>
-              <li>Your email address and all personal information</li>
-              <li>Your active sessions — you are signed out on all devices immediately</li>
+              <li>{t("deleteAccount.deleted.item1")}</li>
+              <li>{t("deleteAccount.deleted.item2")}</li>
             </ul>
           </Section>
 
-          <Section id="retained" title="What is retained">
-            <p>
-              A small anonymized record is kept after deletion. It contains only:
-            </p>
+          <Section id="retained" title={t("deleteAccount.retained.title")}>
+            <p>{t("deleteAccount.retained.intro")}</p>
             <ul>
-              <li>Your user ID (a hash — not your email or any identifiable data)</li>
-              <li>The date your account was deleted</li>
-              <li>Subscription status and whether you have ever paid</li>
+              <li>{t("deleteAccount.retained.item1")}</li>
+              <li>{t("deleteAccount.retained.item2")}</li>
+              <li>{t("deleteAccount.retained.item3")}</li>
             </ul>
-            <p>
-              No personally identifiable information is stored in this record. It exists
-              solely to prevent fraud on re-registration and is retained indefinitely for
-              that purpose.
-            </p>
-            <p>
-              Trip data (flight itineraries) may also be retained, but it is permanently
-              unlinked from your personal information at the time of deletion.
-            </p>
+            <p>{t("deleteAccount.retained.p1")}</p>
+            <p>{t("deleteAccount.retained.p2")}</p>
           </Section>
 
-          <Section id="contact" title="Questions?">
+          <Section id="contact" title={t("deleteAccount.contact.title")}>
             <p>
-              If you have questions about your data or need help deleting your account,
-              contact us at{" "}
+              {t("deleteAccount.contact.prefix")}{" "}
               <a
                 href="mailto:support@sandpiper-app.com"
                 className="text-accent underline underline-offset-2 hover:text-accent/80 transition-colors"
@@ -92,7 +99,6 @@ function DeleteAccount() {
             </p>
           </Section>
         </div>
-
       </main>
 
       <Footer />

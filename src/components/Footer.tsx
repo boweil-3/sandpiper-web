@@ -35,8 +35,11 @@ export function Footer() {
             <a href="/terms" className="hover:text-foreground transition">
               {t("footer.terms")}
             </a>
-            <a href="/delete-account" className="hover:text-foreground transition">
-              Delete Account
+            <a
+              href={localizedPath(lang, "/delete-account")}
+              className="hover:text-foreground transition"
+            >
+              {t("footer.deleteAccount")}
             </a>
           </div>
         </div>
