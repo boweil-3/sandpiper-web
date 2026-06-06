@@ -1,6 +1,6 @@
 import { SandpiperMark } from "@/components/SandpiperMark";
 import { useT } from "@/i18n/LanguageProvider";
-import { localizedPath } from "@/i18n/paths";
+import { isHomePath, localizedPath } from "@/i18n/paths";
 
 export function Footer() {
   const { t, lang } = useT();
@@ -20,7 +20,16 @@ export function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-5">
-            <a href={`${homePath}#top`} className="hover:text-foreground transition">
+            <a
+              href={homePath}
+              className="hover:text-foreground transition"
+              onClick={(e) => {
+                if (isHomePath(window.location.pathname, lang)) {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            >
               {t("footer.top")}
             </a>
             <a href={`${homePath}#download`} className="hover:text-foreground transition">

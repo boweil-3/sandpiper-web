@@ -2,9 +2,8 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
-
-// Language URL slugs — must stay in sync with LANGUAGES in translations.ts
-const LANG_SLUGS = new Set(["en", "fr", "es", "de", "pt", "zh-cn", "zh-tw", "jp", "ko"]);
+import { detectLangFromAcceptLanguage } from "./i18n/detect-lang";
+import { slugForLang } from "./i18n/paths";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -69,25 +68,22 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
-// Rewrite /pt, /jp, etc. → / so TanStack Router can match the home route.
-// Only rewrite bare locale paths — keep /fr/support and similar subpaths intact.
-// The client LanguageProvider reads window.location.pathname to set the language.
-function rewriteLangSlug(request: Request): Request {
+function redirectBareRoot(request: Request): Response | null {
   const url = new URL(request.url);
-  const parts = url.pathname.replace(/^\//, "").split("/").filter(Boolean);
-  const segment = parts[0]?.toLowerCase();
-  if (segment && LANG_SLUGS.has(segment) && parts.length === 1) {
-    url.pathname = "/";
-    return new Request(url.toString(), request);
-  }
-  return request;
+  if (url.pathname !== "/") return null;
+  const lang = detectLangFromAcceptLanguage(request.headers.get("Accept-Language"));
+  url.pathname = `/${slugForLang(lang)}`;
+  return Response.redirect(url.toString(), 302);
 }
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const rootRedirect = redirectBareRoot(request);
+      if (rootRedirect) return rootRedirect;
+
       const handler = await getServerEntry();
-      const response = await handler.fetch(rewriteLangSlug(request), env, ctx);
+      const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);

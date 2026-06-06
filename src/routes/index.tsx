@@ -1,4 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { detectPreferredLang } from "@/i18n/detect-lang";
+import { slugForLang } from "@/i18n/paths";
 import {
   Plane,
   Calendar,
@@ -38,31 +40,11 @@ import { useT } from "@/i18n/LanguageProvider";
 import { CAT, CAT_EDUCATION, CAT_ICON, type Category } from "@/data/appPlan";
 
 export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    meta: [
-      { title: "Sandpiper — Beat jet lag. Arrive ready." },
-      {
-        name: "description",
-        content:
-          "A personalized hour-by-hour schedule for your body, starting 48 hours before departure. Built for international travelers.",
-      },
-      { property: "og:title", content: "Sandpiper — Beat jet lag. Arrive ready." },
-      {
-        property: "og:description",
-        content:
-          "A personalized hour-by-hour schedule for your body, starting 48 hours before departure.",
-      },
-    ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
-      },
-    ],
-  }),
+  beforeLoad: () => {
+    const slug = slugForLang(detectPreferredLang());
+    throw redirect({ to: "/$lang", params: { lang: slug }, replace: true });
+  },
+  component: () => null,
 });
 
 function CTAButtons({ size = "md" }: { size?: "md" | "sm" }) {
@@ -83,10 +65,7 @@ function CTAButtons({ size = "md" }: { size?: "md" | "sm" }) {
 function Hero() {
   const { t } = useT();
   return (
-    <section
-      id="top"
-      className="hero-bg relative isolate flex min-h-[100svh] items-center overflow-hidden pt-24"
-    >
+    <section className="hero-bg relative isolate flex min-h-[100svh] items-center overflow-hidden pt-24">
       <div className="aurora" aria-hidden />
       <div className="hero-noise absolute inset-0 opacity-40" aria-hidden />
 

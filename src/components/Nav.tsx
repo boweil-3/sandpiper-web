@@ -4,9 +4,10 @@ import { ThemeToggle } from "./ThemeToggle";
 import { SandpiperMark } from "./SandpiperMark";
 import { LanguageToggle } from "./LanguageToggle";
 import { useT } from "@/i18n/LanguageProvider";
+import { isHomePath, slugForLang } from "@/i18n/paths";
 
 export function Nav() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -22,7 +23,17 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1100px] items-center justify-between px-7">
-        <Link to="/" hash="top" className="flex items-center gap-2 text-foreground">
+        <Link
+          to="/$lang"
+          params={{ lang: slugForLang(lang) }}
+          className="flex items-center gap-2 text-foreground"
+          onClick={(e) => {
+            if (isHomePath(window.location.pathname, lang)) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <span className="text-accent">
             <SandpiperMark />
           </span>
